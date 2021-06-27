@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500");
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500');
 
 * {
   box-sizing: border-box;
@@ -11,7 +11,7 @@ html {
   --font3: 1.9563rem;
   --font4: 1.1.563em;
   --font5: 1.25rem;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
 }
 
@@ -87,7 +87,7 @@ h1 {
 }
 
 .todo-item::after {
-  content: "";
+  content: '';
   background-color: whitesmoke;
   padding: 1rem;
 }
@@ -103,9 +103,35 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 90vh;
+  background-color: green;
 }
 input {
   transform: scale(1.6) translateX(-1rem);
+}
+
+.add-todo-button {
+  background-color: lightblue;
+  border-radius: 50%;
+  position: absolute;
+  right: 5rem;
+  bottom: 2rem;
+  font-size: 4rem;
+  padding: 1rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 30ms linear;
+}
+
+.add-todo-button:hover {
+  transform: scale(1.1);
+}
+
+.add-todo-button:active {
+  transform: scale(0.95);
 }
 
 @media only screen and (max-width: 50rem) {
