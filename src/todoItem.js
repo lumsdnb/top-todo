@@ -9,6 +9,17 @@ class todoItem {
   set setTitle(t) {
     this.title = t;
   }
+  set setDescription(d) {
+    this.description = d;
+  }
+
+  set setDueDate(d) {
+    this.dueDate = d;
+  }
+
+  set setPriority(p) {
+    this.priority = p;
+  }
 
   get info() {
     return `${this.title} ${this.description} ${this.dueDate} ${this.priority}`;
