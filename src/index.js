@@ -1,15 +1,23 @@
 import todoItem from './todoItem';
 import todoList from './todoList';
+import navBar from './nav';
+
+const container = document.getElementById('content');
 
 function component() {
   const element = document.createElement('div');
-
-  const testItem = new todoItem('TODO title', '', '2021-04-17', '!!');
+  element.classList.add('card');
 
   const defaultList = new todoList('default');
-  element.append(testItem.domElement);
+
+  const addBtn = document.createElement('button');
+  addBtn.classList.add('add-todo-button');
+  addBtn.innerHTML = '+';
+
+  container.parentElement.prepend(navBar());
+  element.append(defaultList.domElement, addBtn);
 
   return element;
 }
 
-document.body.appendChild(component());
+container.appendChild(component());
