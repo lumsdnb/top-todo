@@ -1,8 +1,13 @@
-function component() {
-  const element = document.createElement("div");
+import todoItem from './todoItem';
+import todoList from './todoList';
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
+function component() {
+  const element = document.createElement('div');
+
+  const testItem = new todoItem('TODO title', '', '2021-04-17', '!!');
+
+  const defaultList = new todoList('default');
+  element.append(testItem.domElement);
 
   return element;
 }
