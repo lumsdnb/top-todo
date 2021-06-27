@@ -3,6 +3,7 @@
 ## Assignment
 
 Your ‘todos’ are going to be objects that you’ll want to dynamically create, which means either using factories or constructors/classes to generate them.
+
 - Brainstorm what kind of properties your todo-items are going to have. At a minimum they should have a title, description, dueDate and priority. You might also want to include notes or even a checklist.
 
 todo factory
@@ -15,17 +16,48 @@ includes:
 nice to have:
     add/update nested todo
 
+    ```js
+function todoFactory = (name, description, dueDate, priority)=>{
+    let _isChecked = false
+    const toggleCheck = () =>{
+        _isChecked != _isChecked
+    }
+    return {name, description, dueDate, priority, toggleCheck}
+}
+
+function listFactory = (todos[]) => {
+    let _listName = ""
+    let _listItems=[]
+    const getList = () => todos
+    const changeOrder = () => {   
+        
+    }
+    const setName = (name) => {
+        _listName = name
+    }
+    const addTodo = (todo) =>{
+        
+    }
+    return { getList, getName, setName, changeOrder}
+    
+}
+    ```
+render to dom
+
+
+
 project /list factory
 holds todo items
 includes:
-    add project name
-    add todo item
+    add/update project name
+    add/remove todo item
+nice to have:
     set item order
     sort by
-nice to have:
     set color
 
-- Your todo list should have projects or separate lists of todos. When a user first opens the app, there should be some sort of ‘default’ project to which all of their todos are put. Users should be able to create new projects and choose which project their todos go into.
+- Your todo list should have projects or separate lists of todos. When a user first opens the app, there should be some sort of ‘default’ project to which all of their todos are put. 
+Users should be able to create new projects and choose which project their todos go into.
 - You should separate your application logic (i.e. creating new todos, setting todos as complete, changing todo priority etc.) from the DOM-related stuff, so keep all of those things in separate modules.
 - The look of the User Interface is up to you, but it should be able to do the following:
   - view all projects
@@ -39,4 +71,3 @@ nice to have:
 - Use localStorage to save user’s projects and todos between sessions.
 - Since you are probably already using webpack, adding external libraries from npm is a cinch! You might want to consider using the following useful library in your code:
   date-fns gives you a bunch of handy functions for formatting and manipulating dates and times.
-
