@@ -1,3 +1,8 @@
+function wasClosed() {
+  console.log(this.parentElement);
+  this.parentElement.remove();
+}
+
 class todoItem {
   constructor(title, description, dueDate, priority) {
     this.title = title;
@@ -46,7 +51,12 @@ class todoItem {
     priority.classList.add('todo-priority');
     priority.innerHTML = this.priority;
 
-    domEl.append(checkbox, title, description, dueDate, priority);
+    const close = document.createElement('span');
+    close.classList.add('close-btn');
+    close.innerHTML = 'X';
+    close.addEventListener('click', wasClosed);
+
+    domEl.append(checkbox, title, description, dueDate, priority, close);
     //domEl.innerHTML = `${this.title} ${this.description} ${this.dueDate} ${this.priority}`;
     return domEl;
   }
