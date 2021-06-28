@@ -111,6 +111,20 @@ input {
   transform: scale(1.6) translateX(-1rem);
 }
 
+.close-btn {
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: grey;
+}
+.close-btn:hover {
+  transform: rotate(90deg);
+  transition: all 100ms linear;
+}
+
 .add-todo-button {
   background-color: lightblue;
   border-radius: 50%;
