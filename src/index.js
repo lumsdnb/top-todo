@@ -8,17 +8,8 @@ function component() {
   const element = document.createElement('div');
   element.classList.add('card');
 
-  const addTodo = (e) => {
-    console.log('open modal');
-  };
-
   const defaultList = new todoList('default');
   defaultList.addTodo('TODOd title');
-  defaultList.addTodo('another one');
-  defaultList.addTodo('another one');
-  defaultList.addTodo('another one');
-  defaultList.addTodo('another one');
-  defaultList.addTodo('another one');
 
   const addBtn = document.createElement('button');
   addBtn.classList.add('add-todo-button');
@@ -26,6 +17,15 @@ function component() {
 
   container.parentElement.prepend(navBar());
   element.append(defaultList.domElement, addBtn);
+
+  const addTodo = () => {
+    defaultList.addTodo('new todo');
+    console.log(defaultList);
+    console.log(element.childNodes);
+    //todo: figure out how to remove and re render list properly
+    //element.append(defaultList.domElement);
+  };
+
   addBtn.addEventListener('click', addTodo);
 
   return element;
