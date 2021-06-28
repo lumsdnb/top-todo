@@ -58,7 +58,6 @@ body {
 }
 
 .todo-list {
-  list-style: none;
   padding: 1rem;
   max-width: 40rem;
 }
@@ -85,12 +84,13 @@ h1 {
 .todo-description {
   flex-basis: 100%;
 }
-
+/*
 .todo-item::after {
-  content: '';
+  content: 'bruh';
   background-color: whitesmoke;
   padding: 1rem;
 }
+*/
 
 .todo-priority {
   padding: 0.4rem;
@@ -102,9 +102,10 @@ h1 {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   height: 90vh;
-  background-color: green;
+  background-color: rgb(212, 212, 212);
+  overflow-y: scroll;
 }
 input {
   transform: scale(1.6) translateX(-1rem);
