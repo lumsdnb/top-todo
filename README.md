@@ -1,53 +1,36 @@
-# top-todo
+## requirements
+
+### todo class
+
+includes:
+
+- add/update title
+- add/update desc
+- add/update due date
+- add/update priority
+- check/uncheck item
+  nice to have:
+- add/update nested todo
+
+render to dom (should this be in class?)
+
+### project list
+
+holds todo items
+includes:
+
+- add/update project name
+- add/remove todo item
+  nice to have:
+- set item order
+- sort by
+- set color
 
 ## Assignment
 
 Your ‘todos’ are going to be objects that you’ll want to dynamically create, which means either using factories or constructors/classes to generate them.
 
 - Brainstorm what kind of properties your todo-items are going to have. At a minimum they should have a title, description, dueDate and priority. You might also want to include notes or even a checklist.
-
-todo class
-includes:
-add/update title
-add/update desc
-add/update due date
-add/update priority
-check/uncheck item
-nice to have:
-add/update nested todo
-
-```js
-
-function listFactory = (todos[]) => {
-let \_listName = ""
-let \_listItems=[]
-const getList = () => todos
-const changeOrder = () => {
-
-    }
-    const setName = (name) => {
-        _listName = name
-    }
-    const addTodo = (todo) =>{
-
-    }
-    return { getList, getName, setName, changeOrder}
-
-}
-
-```
-
-render to dom (should this be in class?)
-
-project /list factory
-holds todo items
-includes:
-add/update project name
-add/remove todo item
-nice to have:
-set item order
-sort by
-set color
 
 - Your todo list should have projects or separate lists of todos. When a user first opens the app, there should be some sort of ‘default’ project to which all of their todos are put.
   Users should be able to create new projects and choose which project their todos go into.
@@ -64,7 +47,3 @@ set color
 - Use localStorage to save user’s projects and todos between sessions.
 - Since you are probably already using webpack, adding external libraries from npm is a cinch! You might want to consider using the following useful library in your code:
   date-fns gives you a bunch of handy functions for formatting and manipulating dates and times.
-
-```
-
-```
