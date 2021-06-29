@@ -29,7 +29,7 @@ body {
   list-style: none;
   flex-basis: 100%;
   position: fixed;
-  z-index: 2;
+  z-index: 1;
   backdrop-filter: blur(30px);
   box-shadow: 2px 2px 20px 0px black;
   top: 0;
@@ -41,20 +41,37 @@ body {
   font-size: var(--font5);
   padding: 0.4rem;
   list-style: none;
+  user-select: none;
+  cursor: pointer;
 }
 
 .nav-burger {
+  position: absolute;
+  z-index: 2;
   font-size: 4rem;
-  padding: 0;
+  top: 0;
+  left: 0;
+  padding: 1rem;
   color: whitesmoke;
   background-color: grey;
   border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0 0 0.5rem 0;
   user-select: none;
+}
+.nav-burger:hover {
+  width: 6rem;
+  transition: width 60ms linear;
+}
+
+.nav-burger:active {
+  width: 5rem;
+  border-radius: 0;
+  transition: all 80ms linear;
 }
 
 .todo-list {
@@ -125,6 +142,17 @@ input {
   transition: all 100ms linear;
 }
 
+.menu-hidden {
+  visibility: hidden;
+}
+
+.add-project {
+  user-select: none;
+  cursor: pointer;
+  color: lightgrey;
+  background-color: black;
+}
+
 .add-todo-button {
   background-color: lightblue;
   border-radius: 50%;
@@ -150,12 +178,6 @@ input {
 }
 
 @media only screen and (max-width: 50rem) {
-  .menu {
-    background-color: green;
-    visibility: hidden;
-    backdrop-filter: none;
-  }
-
   .card {
     padding: 0;
   }
