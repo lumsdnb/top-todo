@@ -16,11 +16,11 @@ class todoList {
     for (let i = 0; i < this.todos.length; i++) {
       const item = this.todos[i];
       el.append(item.domElement);
-      console.log(item);
     }
 
     const title = document.createElement('h1');
     title.innerHTML = this.listName;
+    title.setAttribute('contenteditable', 'true');
     el.classList.add('todo-list');
     el.prepend(title);
     return el;
