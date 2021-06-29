@@ -1,30 +1,64 @@
-//generate nav bar
-//<nav><li>home</li><li>menu</li><li>contact us</li></nav>
+import { addProject, changeProjectView } from './index';
+const navBar = (listItems) => {
+  const handleAddProject = (p) => {
+    addProject(p);
+  };
 
-const navBar = () => {
+  const selectProject = (e) => {
+    changeProjectView(e.target.parentNode.dataset.id);
+  };
+
   const nav = document.createElement('nav');
-  nav.classList.add('menu');
-  const entries = ['default project', 'hobbies', 'work i guess'];
+  const navInner = document.createElement('div');
+  navInner.classList.add('menu');
+
+  let viewState = false;
+  const toggleView = () => {
+    viewState = !viewState;
+    viewState
+      ? navInner.classList.add('menu-hidden')
+      : navInner.classList.remove('menu-hidden');
+  };
 
   const burger = document.createElement('span');
-  burger.innerHTML = '-';
+  navInner.classList.contains('menu-hidden')
+    ? (burger.innerHTML = '-')
+    : (burger.innerHTML = '+');
+
   burger.classList.add('nav-burger');
   nav.append(burger);
 
   const list = document.createElement('ul');
   list.classList.add('nav-links');
 
-  for (let i = 0; i < entries.length; i++) {
-    const element = entries[i];
+  //project list
+
+  for (let i = 0; i < listItems.length; i++) {
+    const element = listItems[i];
     let entry = document.createElement('li');
+    entry.dataset.id = i;
     let linkText = document.createTextNode(element);
     let a = document.createElement('a');
     a.append(linkText);
     a.title = element;
     entry.appendChild(a);
+    entry.addEventListener('click', selectProject);
     list.append(entry);
   }
-  nav.append(list);
+
+  // add project btn
+
+  const addBtn = document.createElement('span');
+  addBtn.innerHTML = '+ add project +';
+  addBtn.classList.add('add-project');
+  addBtn.addEventListener('click', () => handleAddProject('new list'));
+
+  //append everything
+
+  navInner.append(list, addBtn);
+  nav.append(navInner);
+
+  burger.addEventListener('click', toggleView);
 
   return nav;
 };
