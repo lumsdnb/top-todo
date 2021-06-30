@@ -1,5 +1,4 @@
 function wasClosed() {
-  console.log(this.parentElement);
   this.parentElement.remove();
 }
 
@@ -26,9 +25,6 @@ class todoItem {
     this.priority = p;
   }
 
-  get info() {
-    return `${this.title} ${this.description} ${this.dueDate} ${this.priority}`;
-  }
   get domElement() {
     const domEl = document.createElement('div');
     const checkbox = document.createElement('input');
