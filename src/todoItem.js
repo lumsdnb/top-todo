@@ -1,5 +1,6 @@
 function wasClosed() {
-  this.parentElement.remove();
+  console.log(this.parentElement.parentElement);
+  //this.parentElement.remove();
 }
 
 class todoItem {
@@ -9,6 +10,7 @@ class todoItem {
     this.dueDate = dueDate;
     this.priority = priority;
     let _isChecked = false;
+    let id = 0;
   }
   set setTitle(t) {
     this.title = t;
@@ -23,6 +25,10 @@ class todoItem {
 
   set setPriority(p) {
     this.priority = p;
+  }
+
+  set setId(i) {
+    this.id = i;
   }
 
   get domElement() {
