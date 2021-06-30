@@ -6,6 +6,14 @@ class todoList {
     this.todos = [];
   }
 
+  set setTitle(n) {
+    this.listName = n;
+  }
+
+  get getTitle() {
+    return this.listName;
+  }
+
   addTodo(item) {
     const t = new todoItem(item, '', '2021-04-17', '!!');
     this.todos.push(t);
@@ -27,6 +35,16 @@ class todoList {
     title.innerHTML = this.listName;
     title.setAttribute('contenteditable', 'true');
     el.classList.add('todo-list');
+
+    title.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        this.setTitle = e.path[0].innerHTML;
+        e.preventDefault();
+        window.getSelection().removeAllRanges();
+        return false;
+      }
+    });
+
     el.prepend(title);
     return el;
   }

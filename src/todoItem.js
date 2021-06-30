@@ -16,7 +16,8 @@ class todoItem {
     this.title = t;
   }
   set setDescription(d) {
-    this.description = d;
+    console.log(e);
+    //this.description = d;
   }
 
   set setDueDate(d) {
@@ -57,6 +58,16 @@ class todoItem {
     close.classList.add('close-btn');
     close.innerHTML = 'X';
     close.addEventListener('click', wasClosed);
+
+    title.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        console.log('cancel');
+        this.setTitle = e.path[0].innerHTML;
+        e.preventDefault();
+        window.getSelection().removeAllRanges();
+        return false;
+      }
+    });
 
     domEl.append(checkbox, title, description, dueDate, priority, close);
     //domEl.innerHTML = `${this.title} ${this.description} ${this.dueDate} ${this.priority}`;
