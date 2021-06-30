@@ -1,4 +1,5 @@
 import { addProject, changeProjectView } from './index';
+
 const navBar = (listItems) => {
   const handleAddProject = (p) => {
     addProject(p);

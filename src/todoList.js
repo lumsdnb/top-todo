@@ -11,10 +11,15 @@ class todoList {
     this.todos.push(t);
   }
 
+  removeTodo(i) {
+    this.todos.splice(i, 1);
+  }
+
   get domElement() {
     const el = document.createElement('div');
     for (let i = 0; i < this.todos.length; i++) {
       const item = this.todos[i];
+      item.setId = i;
       el.append(item.domElement);
     }
 
